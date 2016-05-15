@@ -1,0 +1,76 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  width: 80%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+header h1 {
+  margin: 0;
+  padding: 10px 0;
+  color: #007ee5;
+  font-weight: 700;
+}
+
+main {
+  color: #007ee5;
+  padding-bottom: 30px;
+}
+
+main .left {
+  float: left;
+  width: 30%;
+  padding-top: 10px;
+}
+
+main .left ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 5px;
+}
+
+main .left ul li a {
+  color: #2895F1;
+}
+
+main .right {
+  float: right;
+  width: 70%;
+  padding-top: 20px;
+}
+
+footer {
+  height: 30px;
+  margin-top: -30px;
+}
+
+footer p {
+  margin: 0;
+  color: #007ee5;
+}
+
+footer p a {
+  text-decoration: none;
+  color: #007ee5;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+/*# sourceMappingURL=style.css.map */

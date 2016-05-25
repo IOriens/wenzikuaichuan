@@ -1,7 +1,3 @@
-let $$ = (id) => {
-  return document.getElementById(id)
-}
-
 // let loadDoc = (url, func) => {
 //     let xhr = new XMLHttpRequest()
 //     xhr.onreadystatechange = () => {
@@ -33,26 +29,57 @@ let $$ = (id) => {
 
 import React, { Component } from 'react'
 import { render } from 'react-dom'
+import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router'
+
+let $$ = (id) => {
+  return document.getElementById(id)
+}
+
 class App extends Component {
   render() {
     return (
             <div>
                 <div className="left">
                     <ul>
-                        <li><a href="#"><svg className="icon icon-cloud-upload"><use xlinkHref="#icon-cloud-upload"></use></svg> 上传</a></li>
-                        <li><a href="#"><svg className="icon icon-list2"><use xlinkHref="#icon-list2"></use></svg> 显示记录</a></li>
+                        <li><Link to="/upload"><svg className="icon icon-cloud-upload"><use xlinkHref="#icon-cloud-upload"></use></svg>上传</Link></li>                        
+                        <li><Link to="/listItem"><svg className="icon icon-list2"><use xlinkHref="#icon-list2"></use></svg> 显示记录</Link></li>
                     </ul>
                 </div>
                 <div className="right">
-                  
+                   {this.props.children}
                 </div>
             </div>
     )
   }
 }
 
+class ListItem extends React.Component {
+    render() {
+      return (
+        <div>
+          <h1>ListItem Here</h1>
+        </div>
+      )
+    }
+}
 
-render(
-  <App />,
-  $$('main')
-)
+
+class Upload extends React.Component {
+    render() {
+      return (
+        <div>
+          <h1>Upload Here</h1>
+        </div>
+      )
+    }
+}
+
+render((
+  <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <Route path="/upload" component={Upload}/>
+        <Route path="/listItem" component={ListItem}/>
+      </Route>                    
+  </Router>
+  ),
+  $$('main'))

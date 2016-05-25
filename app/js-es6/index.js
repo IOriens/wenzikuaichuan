@@ -30,6 +30,8 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router'
+import Upload from './components/Upload'
+import ListItem from './components/ListItem'
 
 let $$ = (id) => {
   return document.getElementById(id)
@@ -53,26 +55,26 @@ class App extends Component {
   }
 }
 
-class ListItem extends React.Component {
-    render() {
-      return (
-        <div>
-          <h1>ListItem Here</h1>
-        </div>
-      )
-    }
-}
+// class ListItem extends React.Component {
+//     render() {
+//       return (
+//         <div>
+//           <h1>ListItem Here</h1>
+//         </div>
+//       )
+//     }
+// }
 
 
-class Upload extends React.Component {
-    render() {
-      return (
-        <div>
-          <h1>Upload Here</h1>
-        </div>
-      )
-    }
-}
+// class Upload extends React.Component {
+//     render() {
+//       return (
+//         <div>
+//           <h1>Upload Here</h1>
+//         </div>
+//       )
+//     }
+// }
 
 render((
   <Router history={browserHistory}>

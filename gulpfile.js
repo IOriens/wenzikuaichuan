@@ -1,5 +1,6 @@
 var gulp = require('gulp')
 var browserSync = require('browser-sync')
+var modRewrite = require('connect-modrewrite')
 var reload = browserSync.reload
 var sass = require('gulp-sass')
 var sourcemaps = require('gulp-sourcemaps')
@@ -64,7 +65,12 @@ gulp.task('watchSass', function () {
 gulp.task('serve', function () {
 	browserSync({
 		server: {
-			baseDir: 'app'
+			baseDir: 'app',
+			middleware: [
+                modRewrite([
+                    // '!\\.\\w+$ /index.html [L]'
+                ])
+            ]		
 		}
 	})
 	gulp.watch(['*.html', 'css/*.css', 'js/*.js'], { cwd: 'app' }, reload)

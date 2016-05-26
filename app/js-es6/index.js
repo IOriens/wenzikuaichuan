@@ -40,17 +40,17 @@ let $$ = (id) => {
 class App extends Component {
   render() {
     return (
-            <div>
-                <div className="left">
-                    <ul>
-                        <li><Link to="/upload"><svg className="icon icon-cloud-upload"><use xlinkHref="#icon-cloud-upload"></use></svg>上传</Link></li>                        
-                        <li><Link to="/listItem"><svg className="icon icon-list2"><use xlinkHref="#icon-list2"></use></svg> 显示记录</Link></li>
-                    </ul>
-                </div>
-                <div className="right">
-                   {this.props.children}
-                </div>
-            </div>
+      <div>
+        <div className="left">
+          <ul>
+            <li><Link to="/upload"  activeClassName="active"><svg className="icon icon-cloud-upload"><use xlinkHref="#icon-cloud-upload"></use></svg>上传</Link></li>
+            <li><Link to="/listItem" activeClassName="active"><svg className="icon icon-list2"><use xlinkHref="#icon-list2"></use></svg> 显示记录</Link></li>
+          </ul>
+        </div>
+        <div className="right">
+          {this.props.children}
+        </div>
+      </div>
     )
   }
 }
@@ -78,10 +78,10 @@ class App extends Component {
 
 render((
   <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <Route path="/upload" component={Upload}/>
-        <Route path="/listItem" component={ListItem}/>
-      </Route>                    
+    <Route path="/" component={App}>
+      <Route path="/upload" component={Upload}/>
+      <Route path="/listItem" component={ListItem}/>
+    </Route>
   </Router>
-  ),
+),
   $$('main'))

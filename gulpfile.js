@@ -68,7 +68,7 @@ gulp.task('serve', function () {
 			baseDir: 'app',
 			middleware: [
                 modRewrite([
-                    // '!\\.\\w+$ /index.html [L]'
+                    '!\\.\\w+$ /index.html [L]'
                 ])
             ]		
 		}

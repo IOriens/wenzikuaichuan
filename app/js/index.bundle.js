@@ -129,7 +129,7 @@
 	              null,
 	              _react2.default.createElement(
 	                _reactRouter.Link,
-	                { to: '/upload' },
+	                { to: '/upload', activeClassName: 'active' },
 	                _react2.default.createElement(
 	                  'svg',
 	                  { className: 'icon icon-cloud-upload' },
@@ -143,7 +143,7 @@
 	              null,
 	              _react2.default.createElement(
 	                _reactRouter.Link,
-	                { to: '/listItem' },
+	                { to: '/listItem', activeClassName: 'active' },
 	                _react2.default.createElement(
 	                  'svg',
 	                  { className: 'icon icon-list2' },

@@ -34,14 +34,24 @@ main {
         width: 30%;
         padding-top: 10px;
         
+        .active {
+            background-color: #2895F1;
+            border-radius: 5px;
+            color: #fff;
+        }
+        
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0 5px;
+            font-size: 1.5em;
             
             li {
                 a {
                     color: #2895F1;
+                    display: block;                    
+                    padding: 5px;
+                    width: 50%;
                 }
             }
         }        

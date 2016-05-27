@@ -9,7 +9,7 @@ app.all('/*', function(req, res, next) {
   next();
 });
 
-app.get('/listText', (req, res) => {    
+app.get('/listItem', (req, res) => {    
     let id = 123
     fs.readFile(__dirname + "/data/" + id + ".json", 'utf-8', (err, data) => {
         console.log(data)

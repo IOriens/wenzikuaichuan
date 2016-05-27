@@ -46,8 +46,6 @@
 
 	'use strict';
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -56,21 +54,21 @@
 	
 	var _reactRouter = __webpack_require__(168);
 	
-	var _Upload = __webpack_require__(229);
+	var _Main = __webpack_require__(229);
+	
+	var _Main2 = _interopRequireDefault(_Main);
+	
+	var _Upload = __webpack_require__(230);
 	
 	var _Upload2 = _interopRequireDefault(_Upload);
 	
-	var _ListItem = __webpack_require__(230);
+	var _ListItem = __webpack_require__(231);
 	
 	var _ListItem2 = _interopRequireDefault(_ListItem);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // let loadDoc = (url, func) => {
+	// let loadDoc = (url, func) => {
 	//     let xhr = new XMLHttpRequest()
 	//     xhr.onreadystatechange = () => {
 	//         if (xhr.readyState == 4) {
@@ -103,99 +101,21 @@
 	  return document.getElementById(id);
 	};
 	
-	var App = function (_Component) {
-	  _inherits(App, _Component);
+	// import components
 	
-	  function App() {
-	    _classCallCheck(this, App);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
-	  }
-	
-	  _createClass(App, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'left' },
-	          _react2.default.createElement(
-	            'ul',
-	            null,
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/upload', activeClassName: 'active' },
-	                _react2.default.createElement(
-	                  'svg',
-	                  { className: 'icon icon-cloud-upload' },
-	                  _react2.default.createElement('use', { xlinkHref: '#icon-cloud-upload' })
-	                ),
-	                '上传'
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'li',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/listItem', activeClassName: 'active' },
-	                _react2.default.createElement(
-	                  'svg',
-	                  { className: 'icon icon-list2' },
-	                  _react2.default.createElement('use', { xlinkHref: '#icon-list2' })
-	                ),
-	                ' 显示记录'
-	              )
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'right' },
-	          this.props.children
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return App;
-	}(_react.Component);
-	
-	// class ListItem extends React.Component {
-	//     render() {
-	//       return (
-	//         <div>
-	//           <h1>ListItem Here</h1>
-	//         </div>
-	//       )
-	//     }
-	// }
-	
-	// class Upload extends React.Component {
-	//     render() {
-	//       return (
-	//         <div>
-	//           <h1>Upload Here</h1>
-	//         </div>
-	//       )
-	//     }
-	// }
-	
-	(0, _reactDom.render)(_react2.default.createElement(
+	var router = _react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.browserHistory },
 	  _react2.default.createElement(
 	    _reactRouter.Route,
-	    { path: '/', component: App },
+	    { path: '/', component: _Main2.default },
 	    _react2.default.createElement(_reactRouter.Route, { path: '/upload', component: _Upload2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/listItem', component: _ListItem2.default })
 	  )
-	), $$('main'));
+	);
+	
+	(0, _reactDom.render)(router, $$('main'));
 
 /***/ },
 /* 1 */
@@ -25993,6 +25913,97 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(168);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Main = function (_React$Component) {
+	    _inherits(Main, _React$Component);
+	
+	    function Main() {
+	        _classCallCheck(this, Main);
+	
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
+	    }
+	
+	    _createClass(Main, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'left' },
+	                    _react2.default.createElement(
+	                        'ul',
+	                        null,
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/upload', activeClassName: 'active' },
+	                                _react2.default.createElement(
+	                                    'svg',
+	                                    { className: 'icon icon-cloud-upload' },
+	                                    _react2.default.createElement('use', { xlinkHref: '#icon-cloud-upload' })
+	                                ),
+	                                '上传'
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'li',
+	                            null,
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/listItem', activeClassName: 'active' },
+	                                _react2.default.createElement(
+	                                    'svg',
+	                                    { className: 'icon icon-list2' },
+	                                    _react2.default.createElement('use', { xlinkHref: '#icon-list2' })
+	                                ),
+	                                ' 显示记录'
+	                            )
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'right' },
+	                    this.props.children
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Main;
+	}(_react2.default.Component);
+	
+	exports.default = Main;
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26031,10 +26042,10 @@
 	exports.default = Upload;
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -26060,19 +26071,47 @@
 	    function ListItem() {
 	        _classCallCheck(this, ListItem);
 	
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(ListItem).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ListItem).call(this));
+	
+	        _this.state = {
+	            fistName: "oriens"
+	        };
+	        return _this;
 	    }
 	
 	    _createClass(ListItem, [{
-	        key: 'render',
+	        key: "componentDidMount",
+	        value: function componentDidMount() {
+	            var _this2 = this;
+	
+	            var url = "http://localhost:8081/listItem";
+	            var xhr = new XMLHttpRequest();
+	            xhr.onreadystatechange = function () {
+	                if (xhr.readyState == 4) {
+	                    if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+	                        console.log(xhr.responseText);
+	
+	                        _this2.setState({
+	                            fistName: xhr.responseText
+	                        });
+	                    } else {
+	                        console.log('error');
+	                    }
+	                }
+	            };
+	            xhr.open('get', url, true);
+	            xhr.send(null);
+	        }
+	    }, {
+	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
+	                "div",
 	                null,
 	                _react2.default.createElement(
-	                    'h1',
+	                    "h1",
 	                    null,
-	                    'ListItem Here'
+	                    this.state.fistName
 	                )
 	            );
 	        }

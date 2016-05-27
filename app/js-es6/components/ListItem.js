@@ -1,12 +1,12 @@
 import React from 'react'
-
+import Item from '../components/Item'
 
 
 class ListItem extends React.Component {
     constructor() {
         super()
         this.state = {
-            fistName: "oriens"
+            messages: []
         }
     }
 
@@ -19,7 +19,8 @@ class ListItem extends React.Component {
                     // console.log(xhr.responseText)
 
                     this.setState({
-                        fistName: (xhr.responseText)
+                        // messages: xhr.responseText
+                        messages: JSON.parse(xhr.responseText)
                     })
                     
                 } else {
@@ -34,7 +35,10 @@ class ListItem extends React.Component {
     render() {
         return (
             <div>
-                <h1>{this.state.fistName}</h1>
+                <h2 className="nav-title">显示记录</h2>
+                <ul className="messages">{this.state.messages.map(function (item) {
+                    return <Item key={item.time} item={item}/>
+                })}</ul>
             </div>
         )
     }

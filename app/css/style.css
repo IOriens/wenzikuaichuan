@@ -2,6 +2,11 @@ html, body {
   height: 100%;
 }
 
+h1, h2, h3, h4, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   width: 80%;
   padding: 0;
@@ -17,23 +22,6 @@ a {
   min-height: 100%;
 }
 
-header h1 {
-  font-size: 3em;
-  margin: 0;
-  padding: 10px 0;
-  color: #007ee5;
-  font-weight: 700;
-}
-
-header h1 img {
-  width: 50px;
-  height: 50px;
-  display: block;
-  float: left;
-  padding-top: 15px;
-  padding-right: 10px;
-}
-
 main {
   color: #007ee5;
   padding-bottom: 30px;
@@ -41,33 +29,50 @@ main {
 
 main .left {
   float: left;
-  width: 30%;
+  width: 25%;
   padding-top: 10px;
 }
 
+main .left h1 {
+  height: 70px;
+}
+
+main .left h1 img {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
 main .left .active {
-  background-color: #2895F1;
   border-radius: 5px;
-  color: #fff;
+  color: #000;
 }
 
 main .left ul {
   list-style-type: none;
   margin: 0;
   padding: 0 5px;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 main .left ul li a {
   color: #2895F1;
   display: block;
   padding: 5px;
-  width: 50%;
 }
 
 main .right {
   float: right;
-  width: 70%;
+  width: 75%;
+}
+
+main .right .nav-title {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 16px;
+  margin-bottom: 30px;
 }
 
 footer {
@@ -90,6 +95,26 @@ footer p a {
   width: 1em;
   height: 1em;
   fill: currentColor;
+}
+
+.messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.messages li {
+  margin: 0;
+  padding: 0;
+}
+
+.messages li h2 {
+  font-size: 1.5em;
+}
+
+.messages li h4 {
+  font-size: .8em;
+  margin-bottom: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

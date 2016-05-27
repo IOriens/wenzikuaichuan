@@ -16,10 +16,10 @@ class ListItem extends React.Component {
         xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
                 if ((xhr.status >= 200 && xhr.status < 300) || (xhr.status == 304)) {
-                    console.log(xhr.responseText)
+                    // console.log(xhr.responseText)
 
                     this.setState({
-                        fistName: xhr.responseText
+                        fistName: (xhr.responseText)
                     })
                     
                 } else {

@@ -26089,7 +26089,7 @@
 	            xhr.onreadystatechange = function () {
 	                if (xhr.readyState == 4) {
 	                    if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
-	                        console.log(xhr.responseText);
+	                        // console.log(xhr.responseText)
 	
 	                        _this2.setState({
 	                            fistName: xhr.responseText

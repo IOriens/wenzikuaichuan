@@ -1,10 +1,1 @@
-[
-    {
-        "time":"1464445115369",
-        "message": "nothing"       
-    },
-    {
-        "time":"1464445179643",        
-        "message": "something"
-    }    
-]
+[{"time":"1464445115369","message":"nothing"},{"time":"1464445179643","message":"something"},{"time":"1464449890017","message":"建立"},{"time":"1464449914416","message":"建立"},{"time":"1464449915161","message":"建立"},{"time":"1464455175232","message":"dfsdfs"},{"time":"1464455212903","message":"dfsdfa"},{"time":"1464455324335","message":"dsfasdfasdf"},{"time":"1464455342076","message":"234234"},{"time":"1464455402836","message":"dfasdfa"},{"time":"1464455420048","message":"jlajsd;fja;sdj;fasdfasdf"}]

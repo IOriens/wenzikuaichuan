@@ -21850,7 +21850,7 @@ webpackJsonp([0],[
 /* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -21876,25 +21876,83 @@ webpackJsonp([0],[
 	    function Upload() {
 	        _classCallCheck(this, Upload);
 	
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Upload).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Upload).call(this));
+	
+	        _this.state = {
+	            submited: false,
+	            text: ''
+	        };
+	        return _this;
 	    }
 	
 	    _createClass(Upload, [{
-	        key: "render",
+	        key: 'sendData',
+	        value: function sendData(data) {
+	            var xhr = new XMLHttpRequest();
+	            var fd = new FormData();
+	            var that = this;
+	            for (var name in data) {
+	                fd.append(name, data[name]);
+	            }
+	            // var info = document.getElementById('info')
+	            xhr.addEventListener('load', function (e) {
+	                // info.innerHTML = e.target.responseText
+	                this.setState({ submited: true });
+	            }.bind(that));
+	
+	            xhr.addEventListener('error', function (e) {
+	                // info.innerHTML = 'something wrong happend'
+	                this.setState({ submited: false });
+	                console.log('something wrong happend');
+	            });
+	
+	            xhr.open('POST', 'http://localhost:8081/additem');
+	            xhr.send(fd);
+	        }
+	    }, {
+	        key: 'handleSubmit',
+	        value: function handleSubmit(e) {
+	            e.preventDefault();
+	            var data = { item: this.state.text };
+	            this.sendData(data);
+	        }
+	    }, {
+	        key: 'handleChange',
+	        value: function handleChange(e) {
+	            this.setState({ submited: false, text: e.target.value });
+	        }
+	    }, {
+	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+	
 	            return _react2.default.createElement(
-	                "div",
+	                'div',
 	                null,
 	                _react2.default.createElement(
-	                    "h2",
-	                    { className: "nav-title" },
-	                    "上传信息"
+	                    'h2',
+	                    { className: 'nav-title' },
+	                    '上传信息'
 	                ),
-	                _react2.default.createElement("textarea", { placeholder: "Write something here" }),
 	                _react2.default.createElement(
-	                    "button",
-	                    { className: "submit-btn" },
-	                    "Submit"
+	                    'form',
+	                    { onSubmit: function onSubmit(e) {
+	                            return _this2.handleSubmit(e);
+	                        } },
+	                    _react2.default.createElement('textarea', { placeholder: 'Write something here', onChange: function onChange(e) {
+	                            return _this2.handleChange(e);
+	                        } }),
+	                    _react2.default.createElement(
+	                        'button',
+	                        { className: 'submit-btn' },
+	                        'Submit'
+	                    ),
+	                    ' ',
+	                    _react2.default.createElement(
+	                        'span',
+	                        null,
+	                        this.state.submited ? "Submited" : "Not submited"
+	                    )
 	                )
 	            );
 	        }

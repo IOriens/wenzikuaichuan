@@ -31,11 +31,21 @@ app.post('/addItem', upload.array(), (req, res, next) => {
     console.log(req.body)
     fs.readFile(__dirname + "/data/" + id + ".json", 'utf-8', (err, data) => {
         // console.log(data)
-        let timeTag = new Date()
+        
+        let timeTag = new Date().getTime()
         // console.log(time.getTime())
-        // console.log(item)        
-        res.send(`${item} : ${timeTag.getTime()}`)
-    })            
+        // console.log(item)
+        data = JSON.parse(data)
+        data.push({"time":timeTag.toString(), "message":item}) 
+        fs.writeFile(__dirname + "/data/" + id + ".json", JSON.stringify(data), (err) => {   
+            if(err) {
+                console.log(err)
+            }         
+            console.log(data)
+            res.send(`${item} : ${timeTag}`)
+        })
+
+    })
 })
 
 app.get('/', (req, res) => {

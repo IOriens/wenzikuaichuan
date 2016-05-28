@@ -5,7 +5,10 @@ class Upload extends React.Component {
         return (
             <div>
                 <h2 className="nav-title">上传信息</h2>
-                <h1>Upload Here</h1>
+                <textarea placeholder="Write something here"> 
+                    
+                </textarea>
+                <button className="submit-btn">Submit</button> 
             </div>
         )
     }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>文字快传-跨平台信息传递者</title>
+    <meta name="description" content="跨平台文字传递，让您在PC、手机和Kindle等设备间传递文字信息">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">    
+</head>
+
+<body>
+    <form id="myForm">
+        <input type="text" name="item"><button type="submit">Submit</button>
+    </form>
+    <div id="info"></div>    
+    <script>
+        var sendData = function (form) {
+            var xhr = new XMLHttpRequest()            
+            var fd = new FormData(form)
+            var info = document.getElementById('info')
+            xhr.addEventListener('load', function(e) {                
+                info.innerHTML = e.target.responseText 
+                console.log(e.target.responseText)                          
+            })
+            
+            xhr.addEventListener('error',function (e) {
+                info.innerHTML = 'something wrong happend' 
+                console.log('something wrong happend')
+            })
+            
+            xhr.open('POST','http://localhost:8081/additem')
+            console.log(fd)
+            xhr.send(fd)
+        }
+        
+        var form = document.getElementById('myForm')
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()            
+            sendData(form)
+        })
+    </script>
+
+</body>
+
+</html>

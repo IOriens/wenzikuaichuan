@@ -43,6 +43,7 @@ let $$ = (id) => {
 const router = (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
+      <IndexRoute component={Upload}/>
       <Route path="/upload" component={Upload}/>
       <Route path="/listItem" component={ListItem}/>
     </Route>

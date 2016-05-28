@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
 }
@@ -20,6 +24,18 @@ a {
 
 .wrapper {
   min-height: 100%;
+}
+
+button {
+  display: inline-block;
+  padding: 7px 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 main {
@@ -115,6 +131,28 @@ footer p a {
 .messages li h4 {
   font-size: .8em;
   margin-bottom: 15px;
+}
+
+textarea {
+  border: 1px solid #007ee5;
+  border-radius: 3px;
+  display: block;
+  height: 400px;
+  margin-bottom: 10px;
+  resize: none;
+  width: 400px;
+}
+
+textarea:focus {
+  outline: none;
+  border: 3px solid #007ee5;
+}
+
+.submit-btn {
+  border-color: #0071ce;
+  background-color: #007ee5;
+  background: linear-gradient(#007ee5, #0071ce);
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

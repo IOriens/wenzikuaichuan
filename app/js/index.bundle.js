@@ -68,6 +68,7 @@ webpackJsonp([0],[
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: _Main2.default },
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Upload2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/upload', component: _Upload2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/listItem', component: _ListItem2.default })
 	  )
@@ -21889,10 +21890,11 @@ webpackJsonp([0],[
 	                    { className: "nav-title" },
 	                    "上传信息"
 	                ),
+	                _react2.default.createElement("textarea", { placeholder: "Write something here" }),
 	                _react2.default.createElement(
-	                    "h1",
-	                    null,
-	                    "Upload Here"
+	                    "button",
+	                    { className: "submit-btn" },
+	                    "Submit"
 	                )
 	            );
 	        }

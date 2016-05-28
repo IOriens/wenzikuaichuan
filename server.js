@@ -31,10 +31,10 @@ app.post('/addItem', upload.array(), (req, res, next) => {
     console.log(req.body)
     fs.readFile(__dirname + "/data/" + id + ".json", 'utf-8', (err, data) => {
         // console.log(data)
-        let time = new Date()
+        let timeTag = new Date()
         // console.log(time.getTime())
-        // console.log(item)
-        res.send(`${item} : ${time.getUTCDate()}`)
+        // console.log(item)        
+        res.send(`${item} : ${timeTag.getTime()}`)
     })            
 })
 

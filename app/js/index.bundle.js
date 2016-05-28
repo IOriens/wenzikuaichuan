@@ -22034,7 +22034,7 @@ webpackJsonp([0],[
 	    _createClass(Item, [{
 	        key: 'render',
 	        value: function render() {
-	            var time = this.props.item.time;
+	            var time = new Date(parseInt(this.props.item.time));
 	            var message = this.props.item.message;
 	
 	            return _react2.default.createElement(
@@ -22048,7 +22048,7 @@ webpackJsonp([0],[
 	                _react2.default.createElement(
 	                    'h4',
 	                    null,
-	                    time
+	                    time.toLocaleString()
 	                )
 	            );
 	        }

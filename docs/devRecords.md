@@ -21,3 +21,17 @@ Caused by wrong extending class: `React.component`, it should be `React.Componen
 
 ## Node.js (with express & bodyParser): unable to obtain form-data from post request
 [Node.js (with express & bodyParser): unable to obtain form-data from post request](http://stackoverflow.com/questions/26347394/node-js-with-express-bodyparser-unable-to-obtain-form-data-from-post-reques)
+In case you need to handle a text-only multipart form, you can use any of the multer methods (`.single()`, `.array()`, `fields()`). Here is an example using `.array()`:
+```
+var express = require('express')
+var app = express()
+var multer  = require('multer')
+var upload = multer()
+
+app.post('/profile', upload.array(), function (req, res, next) {
+  // req.body contains the text fields
+})
+```
+
+## Usage of Date object
+

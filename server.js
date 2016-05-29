@@ -40,7 +40,7 @@ app.post('/addItem', upload.array(), (req, res, next) => {
                 console.log(err)
             }         
             console.log('data',data, timeTag)
-            console.log('stringify',JSON.stringify(data),timeTag)
+            // console.log('stringify',JSON.stringify(data),timeTag)
             res.send(`${item} : ${timeTag}`)
         })
 

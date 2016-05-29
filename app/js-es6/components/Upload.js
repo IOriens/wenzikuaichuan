@@ -10,6 +10,8 @@ class Upload extends React.Component {
     }
 
     sendData (data) {
+        console.log(data)
+        
         var xhr = new XMLHttpRequest()
         var fd = new FormData()
         var that = this
@@ -31,7 +33,8 @@ class Upload extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        let data = {item: this.state.text}        
+        let data = {item: this.state.text}    
+            
         this.sendData(data)                        
     }
 

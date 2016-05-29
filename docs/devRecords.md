@@ -46,3 +46,4 @@ app.post('/profile', upload.array(), function (req, res, next) {
 
 5/29/2016, 5:24:04 PM
 ```
+This happened because I have open the same link in firefox and chrome. These two browser won't sync while one in root mode and the other not. This seems weird. 

@@ -7,54 +7,103 @@ var multer = require('multer')
 var upload = multer()
 
 
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+var ObjectId = require('mongodb').ObjectID;
+var dbUrl = 'mongodb://localhost:27017/wzkc';
+
+var data = []
+
+let userId = '123'
+
+// insertDocument in to mongodb
+var insertDocument = function (db, collection, data, callback) {
+    
+    db.collection(collection).insertOne(data, function (err, result) {
+        
+        assert.equal(err, null);
+        console.log(`Inserted a document into the ${collection} collection.`);
+        callback();
+        
+    });
+    
+};
+
+// find document in mongodb
+var findDocument = function (db, collection, query, callback) {
+    
+    var cursor = db.collection(collection).find(query);
+    console.log(`Searching the ${collection} collection.`);
+    data = []
+    cursor.each(function (err, doc) {
+        assert.equal(err, null);
+        if (doc != null) {
+            data.push({ "time": doc.time, "message": doc.message })
+        } else {            
+            callback();
+        }
+    });
+    
+};
+
+
+// Routing 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-// app.use(express.json())
 
 app.all('/*', function (req, res, next) {
+    
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
+    
 });
 
 app.get('/listItem', (req, res) => {
-    let id = 123
-    fs.readFile(__dirname + "/data/" + id + ".json", 'utf-8', (err, data) => {
-        // console.log(data)
-        res.send(data)
-    })
+
+    MongoClient.connect(dbUrl, function (err, db) {
+        
+        assert.equal(null, err);
+        
+        console.log("Connected correctly to server.");
+        
+        findDocument(db, userId, {}, () => {
+            res.send(data)
+            db.close()
+        })
+        
+    });
+
 })
 
 app.post('/addItem', upload.array(), (req, res, next) => {
+    
     let item = req.body.item
-    let id = 123
-    console.log(req.body)
-    fs.readFile(__dirname + "/data/" + id + ".json", 'utf-8', (err, data) => {        
-        
-        let timeTag = new Date().getTime()
-        data = JSON.parse(data)
-        data.push({"time":timeTag.toString(), "message":item}) 
-        
-        fs.writeFile(__dirname + "/data/" + id + ".json", JSON.stringify(data), (err) => {   
-            if(err) {
-                console.log(err)
-            }         
-            console.log('data',data, timeTag)
-            // console.log('stringify',JSON.stringify(data),timeTag)
-            res.send(`${item} : ${timeTag}`)
-        })
+    let timeTag = new Date().getTime()    
+    let uploadItem = ({ "time": timeTag.toString(), "message": item })
 
-    })
+
+    MongoClient.connect(dbUrl, function (err, db) {
+        assert.equal(null, err);
+        console.log("Connected correctly to server.");
+        insertDocument(db, userId, uploadItem, () => {
+            db.close();
+        })
+    });
+    
 })
 
 app.get('/', (req, res) => {
-
+    
     res.send('Hello!')
+    
 })
 
 var server = app.listen(8081, () => {
+    
     let host = server.address().address
     let port = server.address().port
 
     console.log("应用实例，访问地址为 http://%s:%s", host, port)
+    
 }) 

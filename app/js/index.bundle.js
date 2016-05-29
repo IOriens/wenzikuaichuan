@@ -26,35 +26,6 @@ webpackJsonp([0],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// let loadDoc = (url, func) => {
-	//     let xhr = new XMLHttpRequest()
-	//     xhr.onreadystatechange = () => {
-	//         if (xhr.readyState == 4) {
-	//             if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
-	//                 func(xhr)
-	//             } else {
-	//                 console.log('wrong')
-	//             }
-	//         }
-	//     }
-	//     xhr.open('get', url, true)
-	//     xhr.send(null)
-	// }
-	
-	// let listText = (xhr) => {
-	//     let data = xhr.responseText
-	//     data = JSON.parse(data)  
-	//     let txt = "<table><thead><tr><th>Content</th><th>Time</th></tr></thead><tbody>"   
-	//     for (let it in data) {
-	//         if (data.hasOwnProperty(it)) {           
-	//             txt +="<tr><td>"+ data[it] +"</td><td>" + it +  "</td></tr>"
-	//         }
-	//     }   
-	//     txt += "</tbody></table>"
-	//     console.log(txt)
-	//     $$('info').innerHTML = txt
-	// }
-	
 	var $$ = function $$(id) {
 	  return document.getElementById(id);
 	};
@@ -21894,16 +21865,13 @@ webpackJsonp([0],[
 	            for (var name in data) {
 	                fd.append(name, data[name]);
 	            }
-	            // var info = document.getElementById('info')
+	
 	            xhr.addEventListener('load', function (e) {
-	                // info.innerHTML = e.target.responseText
 	                this.setState({ submited: true });
 	            }.bind(that));
 	
 	            xhr.addEventListener('error', function (e) {
-	                // info.innerHTML = 'something wrong happend'
-	                this.setState({ submited: false });
-	                console.log('something wrong happend');
+	                throw e;
 	            });
 	
 	            xhr.open('POST', 'http://localhost:8081/additem');
@@ -22012,7 +21980,7 @@ webpackJsonp([0],[
 	
 	            var url = "http://localhost:8081/listItem";
 	            var xhr = new XMLHttpRequest();
-	            xhr.onreadystatechange = function () {
+	            xhr.onreadystatechange = function (error) {
 	                if (xhr.readyState == 4) {
 	                    if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
 	                        // console.log(xhr.responseText)
@@ -22022,7 +21990,7 @@ webpackJsonp([0],[
 	                            messages: JSON.parse(xhr.responseText)
 	                        });
 	                    } else {
-	                        console.log('error');
+	                        throw error;
 	                    }
 	                }
 	            };

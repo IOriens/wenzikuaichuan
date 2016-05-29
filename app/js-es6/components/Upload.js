@@ -13,19 +13,16 @@ class Upload extends React.Component {
         var xhr = new XMLHttpRequest()
         var fd = new FormData()
         var that = this
-        for(let name in data) {
+        for(let name in data) {            
             fd.append(name, data[name])
         }
-        // var info = document.getElementById('info')
+
         xhr.addEventListener('load', function (e) {
-            // info.innerHTML = e.target.responseText
             this.setState({ submited: true })            
         }.bind(that))
 
         xhr.addEventListener('error', function (e) {
-            // info.innerHTML = 'something wrong happend'
-            this.setState({ submited: false })
-            console.log('something wrong happend')
+            throw(e)
         })
 
         xhr.open('POST', 'http://localhost:8081/additem')        
@@ -34,7 +31,7 @@ class Upload extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        let data = {item: this.state.text}
+        let data = {item: this.state.text}        
         this.sendData(data)                        
     }
 
@@ -47,9 +44,7 @@ class Upload extends React.Component {
             <div>
                 <h2 className="nav-title">上传信息</h2>
                 <form onSubmit={e => this.handleSubmit(e) }>
-                    <textarea placeholder="Write something here" onChange={ e => this.handleChange(e) }>
-
-                    </textarea>
+                    <textarea placeholder="Write something here" onChange={ e => this.handleChange(e) } />              
                     <button className="submit-btn" >Submit</button> <span>{this.state.submited ? "Submited" : "Not submited"}</span>
                 </form>
             </div>

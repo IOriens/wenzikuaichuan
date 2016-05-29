@@ -12,7 +12,7 @@ h1, h2, h3, h4, p, ul, li {
 }
 
 body {
-    width: 80%;
+    width: 70%;
     padding: 0;
     margin: 0 auto;
 }
@@ -38,28 +38,29 @@ button {
     cursor: pointer;
 }
 
-header {
-    // h1 {
-    //     font-size: 3em;
-    //     margin: 0;
-    //     overflow: hidden;
-    //     padding: 10px 0;
-    //     color: #007ee5;
-    //     font-weight: 700;  
-    //     img {
-    //         width: 50px;
-    //         height: 50px;
-    //         display: block;
-    //         float: left;
-    //         padding-top: 15px;
-    //         padding-right: 10px;
-    //     }  
-    // }    
-}
+// header {
+//     h1 {
+//         font-size: 3em;
+//         margin: 0;
+//         overflow: hidden;
+//         padding: 10px 0;
+//         color: #007ee5;
+//         font-weight: 700;  
+//         img {
+//             width: 50px;
+//             height: 50px;
+//             display: block;
+//             float: left;
+//             padding-top: 15px;
+//             padding-right: 10px;
+//         }  
+//     }    
+// }
 
 main {
     color: #007ee5;
-    padding-bottom: 30px;   
+    overflow: hidden;
+    padding-bottom: 30px;       
     .left {
         float: left;
         width: 25%;
@@ -98,11 +99,12 @@ main {
             
             li {
                 a {
+                    outline: none;
                     color: #2895F1;
                     display: block;                    
                     padding: 5px;
                     // width: 50%;
-                }
+                }                                
             }
         }        
     }   
@@ -111,6 +113,9 @@ main {
         width: 75%;
         // padding-top: 20px;
         
+        
+        // Common
+        // ===========================
         .nav-title {
             font-size: 18px;
             font-weight: 400;
@@ -118,6 +123,53 @@ main {
             border-bottom: 1px solid #e5e5e5;
             padding-bottom: 16px; 
             margin-bottom: 30px;
+        }
+        
+        // ListItem
+        // ===========================
+        .messages {
+            list-style-type: none;    
+            margin: 0;
+            padding: 0;
+            li {
+                margin: 0;
+                padding: 0;
+                
+                h2 {
+                    font-size: 1.5em;
+                }
+                
+                h4 {
+                    font-size: .8em;
+                    margin-bottom: 15px;
+                }
+            }
+        }      
+         
+        // Upload  
+        // ===========================
+        textarea {       
+            border: 1px solid #007ee5;
+            border-radius: 3px;
+            display: block;
+            height: 400px;
+            margin-bottom: 10px;   
+            resize: none;
+            width: 100%;
+        }
+
+        textarea:focus {
+            outline: none;
+            border: 3px solid #007ee5;
+        }
+                
+        .submit-btn {    
+            border-color: #0071ce;
+            background-color: #007ee5;
+            background: -webkit-linear-gradient(#007ee5, #0071ce);
+            background: linear-gradient(#007ee5, #0071ce);
+            color: #fff;
+            // padding: 5px;    
         }
     }
 }
@@ -127,10 +179,10 @@ footer {
     margin-top: -30px;
     p {
         margin: 0;
-        color: #007ee5;
+        color: #7b8994;
         a {
             text-decoration: none;
-            color: #007ee5;
+            color: #7b8994;
         }
     }
 }
@@ -142,46 +194,5 @@ footer {
 	fill: currentColor;
 }
 
-.messages {
-    list-style-type: none;    
-    margin: 0;
-    padding: 0;
-    li {
-        margin: 0;
-        padding: 0;
-        
-        h2 {
-            font-size: 1.5em;
-        }
-        
-        h4 {
-            font-size: .8em;
-            margin-bottom: 15px;
-        }
-    }
-}
 
 
-textarea {       
-    border: 1px solid #007ee5;
-    border-radius: 3px;
-    display: block;
-    height: 400px;
-    margin-bottom: 10px;   
-    resize: none;
-    width: 400px;
-}
-
-textarea:focus {
-    outline: none;
-    border: 3px solid #007ee5;
-}
-
-.submit-btn {    
-    border-color: #0071ce;
-    background-color: #007ee5;
-    background: -webkit-linear-gradient(#007ee5, #0071ce);
-    background: linear-gradient(#007ee5, #0071ce);
-    color: #fff;
-    // padding: 5px;    
-}

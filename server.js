@@ -29,19 +29,18 @@ app.post('/addItem', upload.array(), (req, res, next) => {
     let item = req.body.item
     let id = 123
     console.log(req.body)
-    fs.readFile(__dirname + "/data/" + id + ".json", 'utf-8', (err, data) => {
-        // console.log(data)
+    fs.readFile(__dirname + "/data/" + id + ".json", 'utf-8', (err, data) => {        
         
         let timeTag = new Date().getTime()
-        // console.log(time.getTime())
-        // console.log(item)
         data = JSON.parse(data)
         data.push({"time":timeTag.toString(), "message":item}) 
+        
         fs.writeFile(__dirname + "/data/" + id + ".json", JSON.stringify(data), (err) => {   
             if(err) {
                 console.log(err)
             }         
-            console.log(data)
+            console.log('data',data, timeTag)
+            console.log('stringify',JSON.stringify(data),timeTag)
             res.send(`${item} : ${timeTag}`)
         })
 

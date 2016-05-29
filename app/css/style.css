@@ -12,7 +12,7 @@ h1, h2, h3, h4, p, ul, li {
 }
 
 body {
-  width: 80%;
+  width: 70%;
   padding: 0;
   margin: 0 auto;
 }
@@ -40,6 +40,7 @@ button {
 
 main {
   color: #007ee5;
+  overflow: hidden;
   padding-bottom: 30px;
 }
 
@@ -72,6 +73,7 @@ main .left ul {
 }
 
 main .left ul li a {
+  outline: none;
   color: #2895F1;
   display: block;
   padding: 5px;
@@ -91,6 +93,48 @@ main .right .nav-title {
   margin-bottom: 30px;
 }
 
+main .right .messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+main .right .messages li {
+  margin: 0;
+  padding: 0;
+}
+
+main .right .messages li h2 {
+  font-size: 1.5em;
+}
+
+main .right .messages li h4 {
+  font-size: .8em;
+  margin-bottom: 15px;
+}
+
+main .right textarea {
+  border: 1px solid #007ee5;
+  border-radius: 3px;
+  display: block;
+  height: 400px;
+  margin-bottom: 10px;
+  resize: none;
+  width: 100%;
+}
+
+main .right textarea:focus {
+  outline: none;
+  border: 3px solid #007ee5;
+}
+
+main .right .submit-btn {
+  border-color: #0071ce;
+  background-color: #007ee5;
+  background: linear-gradient(#007ee5, #0071ce);
+  color: #fff;
+}
+
 footer {
   height: 30px;
   margin-top: -30px;
@@ -98,12 +142,12 @@ footer {
 
 footer p {
   margin: 0;
-  color: #007ee5;
+  color: #7b8994;
 }
 
 footer p a {
   text-decoration: none;
-  color: #007ee5;
+  color: #7b8994;
 }
 
 .icon {
@@ -111,48 +155,6 @@ footer p a {
   width: 1em;
   height: 1em;
   fill: currentColor;
-}
-
-.messages {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.messages li {
-  margin: 0;
-  padding: 0;
-}
-
-.messages li h2 {
-  font-size: 1.5em;
-}
-
-.messages li h4 {
-  font-size: .8em;
-  margin-bottom: 15px;
-}
-
-textarea {
-  border: 1px solid #007ee5;
-  border-radius: 3px;
-  display: block;
-  height: 400px;
-  margin-bottom: 10px;
-  resize: none;
-  width: 400px;
-}
-
-textarea:focus {
-  outline: none;
-  border: 3px solid #007ee5;
-}
-
-.submit-btn {
-  border-color: #0071ce;
-  background-color: #007ee5;
-  background: linear-gradient(#007ee5, #0071ce);
-  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

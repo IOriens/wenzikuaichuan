@@ -35,3 +35,14 @@ app.post('/profile', upload.array(), function (req, res, next) {
 
 ## Usage of Date object
 
+## Upload item in chinese caused problem like this
+```
+[{"time":"1464513844322","message":"大放送"},{"time":"1464513844325","message":""}]
+
+[{"time":"1464513844322","message":"大放送"},{"time":"1464513844325","message":""},{"time":"1464514117893","message":""}]放送"}]
+
+大放送
+5/29/2016, 5:24:04 PM
+
+5/29/2016, 5:24:04 PM
+```

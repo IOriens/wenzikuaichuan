@@ -13,7 +13,7 @@ class ListItem extends React.Component {
     componentDidMount() {
         var url = "http://localhost:8081/listItem"
         var xhr = new XMLHttpRequest()
-        xhr.onreadystatechange = () => {
+        xhr.onreadystatechange = (error) => {
             if (xhr.readyState == 4) {
                 if ((xhr.status >= 200 && xhr.status < 300) || (xhr.status == 304)) {
                     // console.log(xhr.responseText)
@@ -24,7 +24,7 @@ class ListItem extends React.Component {
                     })
                     
                 } else {
-                    console.log('error')
+                   throw(error)
                 }
             }
         }        

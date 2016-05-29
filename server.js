@@ -59,7 +59,7 @@ app.all('/*', function (req, res, next) {
     
 });
 
-app.get('/listItem', (req, res) => {
+app.get('/Items', (req, res) => {
 
     MongoClient.connect(dbUrl, function (err, db) {
         
@@ -76,7 +76,7 @@ app.get('/listItem', (req, res) => {
 
 })
 
-app.post('/addItem', upload.array(), (req, res, next) => {
+app.post('/Items', upload.array(), (req, res, next) => {
     
     let item = req.body.item
     let timeTag = new Date().getTime()    
@@ -87,6 +87,7 @@ app.post('/addItem', upload.array(), (req, res, next) => {
         assert.equal(null, err);
         console.log("Connected correctly to server.");
         insertDocument(db, userId, uploadItem, () => {
+            res.send(uploadItem)
             db.close();
         })
     });

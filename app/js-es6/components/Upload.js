@@ -27,7 +27,7 @@ class Upload extends React.Component {
             throw(e)
         })
 
-        xhr.open('POST', 'http://localhost:8081/additem')        
+        xhr.open('POST', 'http://localhost:8081/Items')        
         xhr.send(fd)
     }
 

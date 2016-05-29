@@ -87,7 +87,7 @@ gulp.task('lint', function name() {
 gulp.task('default', ['sass', 'build-dev','watchSass', 'serve'/*, possible other tasks... */])
 
 //Production 最后使用将可发布的文件放到dist文件夹中
-gulp.task('prod', [], function () {
+gulp.task('prod', ['build'], function () {
 	gulp.src(sassInput)
 		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(autoprefixer(autoPrefixerOptions))
@@ -102,8 +102,7 @@ gulp.task('prod', [], function () {
           removeAttributeQuotes: true
 		}))
 		.pipe(gulp.dest('./dist'))
-	gulp.src('./app/js/*.js')
-		.pipe(uglify())
+	gulp.src('./app/js/*.js')		
 		.pipe(gulp.dest('./dist/js'))
 	gulp.src('./app/img/**/*')
 		.pipe(gulp.dest('./dist/img'))

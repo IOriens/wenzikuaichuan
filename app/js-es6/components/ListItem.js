@@ -11,7 +11,7 @@ class ListItem extends React.Component {
     }
 
     componentDidMount() {
-        var url = "http://localhost:8081/listItem"
+        var url = "http://localhost:8081/Items"
         var xhr = new XMLHttpRequest()
         xhr.onreadystatechange = (error) => {
             if (xhr.readyState == 4) {

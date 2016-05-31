@@ -67,6 +67,7 @@ gulp.task('serve', function () {
 		server: {
 			baseDir: 'app',
 			middleware: [
+				// For react-router, read devRecord.md for reference
                 modRewrite([
                     '!\\.\\w+$ /index.html [L]'
                 ])

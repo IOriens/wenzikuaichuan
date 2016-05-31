@@ -14,7 +14,7 @@ var dbUrl = 'mongodb://localhost:27017/wzkc';
 
 var data = []
 
-let userId = '123'
+let userId = 'user_123'
 
 // insertDocument in to mongodb
 var insertDocument = function (db, collection, data, callback) {

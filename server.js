@@ -1,18 +1,17 @@
 'use strict'
-var express = require('express')
-var app = express()
-var fs = require('fs')
-var bodyParser = require('body-parser')
-var multer = require('multer')
-var upload = multer()
+const express = require('express')
+const app = express()
+const fs = require('fs')
+const bodyParser = require('body-parser')
+const multer = require('multer')
+const upload = multer()
 
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+const ObjectId = require('mongodb').ObjectID;
+const dbUrl = 'mongodb://localhost:27017/wzkc';
 
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var ObjectId = require('mongodb').ObjectID;
-var dbUrl = 'mongodb://localhost:27017/wzkc';
-
-var data = []
+let data = []
 
 let userId = 'user_123'
 

@@ -47,3 +47,23 @@ app.post('/profile', upload.array(), function (req, res, next) {
 5/29/2016, 5:24:04 PM
 ```
 This happened because I have open the same link in firefox and chrome. These two browser won't sync while one in root mode and the other not. This seems weird. 
+
+
+## multi index
+```
+ERROR in multi index
+Module not found: Error: Cannot resolve module 'index2.js' in /home/oriens/own/wzkc/src
+ @ multi index
+```
+change `'index': 'index.js'` in `webpack.config.js` to `'index': './index.js'`
+
+##  arguments[i].apply is not a function
+
+change from
+```
+plugins.push(
+```
+to
+```
+loaders.push(
+```

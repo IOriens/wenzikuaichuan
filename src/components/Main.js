@@ -6,7 +6,7 @@ class Main extends React.Component {
         return (
             <div>
                 <div className="left">
-                    <h1><Link to="/"><img src="img/icon.jpg" alt="ICON" /></Link></h1>
+                    <h1><Link to="/"><img src={require('../img/icon.jpg')} alt="ICON" /></Link></h1>
                     <ul>                        
                         <li><Link to="/upload"  activeClassName="active"><svg className="icon icon-cloud-upload"><use xlinkHref="#icon-cloud-upload"></use></svg>上传</Link></li>
                         <li><Link to="/listItem" activeClassName="active"><svg className="icon icon-list2"><use xlinkHref="#icon-list2"></use></svg> 显示记录</Link></li>

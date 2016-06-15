@@ -7,6 +7,10 @@ import Main from './components/Main'
 import Upload from './components/Upload'
 import ListItem from './components/ListItem'
 
+// import scss
+import './scss/style.scss'
+
+
 let $$ = (id) => {
   return document.getElementById(id)
 }

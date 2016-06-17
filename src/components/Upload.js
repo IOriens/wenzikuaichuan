@@ -1,5 +1,5 @@
 import React  from 'react'
-import Confit from 'Config'
+import Config from 'Config'
 
 class Upload extends React.Component {
     constructor() {

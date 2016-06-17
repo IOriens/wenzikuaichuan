@@ -34,7 +34,7 @@
       "repo": "git@git.coding.net:IOriens/zuche.git",
       "path": "/home/oriens/www/production",
     //   "post-deploy": "npm install --registry=https://registry.npm.taobao.org --production && pm2 startOrRestart ecosystem.json --env production"
-      "post-deploy": "pm2 stop all startOrRestart ecosystem.json --env production"
+      "post-deploy": "pm2 delete all && pm2 startOrRestart ecosystem.json --env production"
     }
     // ,
     // dev : {

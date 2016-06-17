@@ -20,8 +20,8 @@ var isProduction = function () {
     return process.env.NODE_ENV === 'production';
 };
 
-let dbUrl = isProduction() ? 'mongodb://localhost:27017/wzkc': 'mongodb://114.215.131.176:27017/wzkc'
-
+// let dbUrl = isProduction() ? 'mongodb://localhost:27017/wzkc': 'mongodb://114.215.131.176:27017/wzkc'
+const dbUrl = 'mongodb://localhost:27017/wzkc';
 // insertDocument in to mongodb
 var insertDocument = function (db, collection, data, callback) {
     

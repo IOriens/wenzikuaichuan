@@ -10,6 +10,11 @@ class Upload extends React.Component {
         }
     }
 
+    componentDidMount() {
+         let text = sessionStorage.getItem('txt') 
+        this.setState({text:text ? text : ''})
+    }
+
     sendData (data) {
         console.log(data)
         
@@ -34,12 +39,12 @@ class Upload extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        let data = {item: this.state.text}    
-            
+        let data = {item: this.state.text}                
         this.sendData(data)                        
     }
 
     handleChange(e) {        
+        sessionStorage.setItem('txt',e.target.value)
         this.setState({ submited: false, text: e.target.value})
     }
 
@@ -48,7 +53,7 @@ class Upload extends React.Component {
             <div>
                 <h2 className="nav-title">上传信息</h2>
                 <form onSubmit={e => this.handleSubmit(e) }>
-                    <textarea placeholder="Write something here" onChange={ e => this.handleChange(e) } />              
+                    <textarea placeholder="Write something here" onChange={ e => this.handleChange(e) } value={this.state.text}/>              
                     <button className="submit-btn" >Submit</button> <span>{this.state.submited ? "Submited" : "Not submited"}</span>
                 </form>
             </div>

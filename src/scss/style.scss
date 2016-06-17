@@ -131,17 +131,44 @@ main {
             list-style-type: none;    
             margin: 0;
             padding: 0;
-            li {
-                margin: 0;
+            li {                
+                overflow: hidden;
+                margin: 0 0 5px 0;
                 padding: 0;
+                .content {
+                    float: left;
+                    width: 90%;                    
+                    h2 {
+                        font-size: 1.5em;
+                    }
                 
-                h2 {
-                    font-size: 1.5em;
+                    h4 {
+                        font-size: .8em;                        
+                    }
                 }
                 
-                h4 {
-                    font-size: .8em;
-                    margin-bottom: 15px;
+
+                button {
+                    outline: none;
+                    background: none;
+                    border: none;
+                    float: right;
+                    display: none;
+                }
+
+                
+            }
+
+            li:hover {
+                button {
+                    color: #fff;
+                    background-color: #d9534f;
+                    border: 1px solid #d43f3a;
+                    display: block;
+                }
+
+                button:hover {
+                    background-color: darken(#d9534f,8%)
                 }
             }
         }      

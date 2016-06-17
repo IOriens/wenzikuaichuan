@@ -6,12 +6,12 @@
   "apps": [
 
     {
-      "name": "WEB",
+      "name": "web",
       "script": "web.js"
     },
     // First application
     {
-      "name": "API",
+      "name": "api",
       "script": "server.js"
     //   "env": {
     //     "COMMON_VARIABLE": "true"

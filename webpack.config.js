@@ -104,7 +104,7 @@ module.exports = {
         hot: true
     },
     externals: {
-        'Config': JSON.stringify(process.env.ENV === 'production' ? {
+        'Config': JSON.stringify(isProduction() ? {
             serverURL: "http://114.215.131.176"
         } : {
                 serverURL: "http://localhost:8090"

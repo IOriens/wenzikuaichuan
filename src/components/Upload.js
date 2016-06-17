@@ -1,4 +1,5 @@
 import React  from 'react'
+import Confit from 'Config'
 
 class Upload extends React.Component {
     constructor() {
@@ -27,7 +28,7 @@ class Upload extends React.Component {
             throw(e)
         })
 
-        xhr.open('POST', 'http://localhost:8081/Items')        
+        xhr.open('POST', `${Config.serverURL}/Items`)        
         xhr.send(fd)
     }
 

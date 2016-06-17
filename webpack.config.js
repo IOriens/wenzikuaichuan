@@ -16,7 +16,7 @@ var plugins = [
     new webpack.DefinePlugin({
         VERSION: pkg.version,
         DEBUG: process.env.NODE_ENV !== 'production',
-        'process.env.NODE_ENV': isProduction()? '"production"' : '"development"'
+        'process.env.NODE_ENV': isProduction() ? '"production"' : '"development"'
     }),
 
     new webpack.ProvidePlugin({
@@ -102,5 +102,12 @@ module.exports = {
         contentBase: './dist',
         historyApiFallback: true,
         hot: true
+    },
+    externals: {
+        'Config': JSON.stringify(process.env.ENV === 'production' ? {
+            serverURL: "http://114.215.131.176"
+        } : {
+                serverURL: "http://localhost:8090"
+            })
     }
 }

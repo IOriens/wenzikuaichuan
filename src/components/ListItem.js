@@ -1,6 +1,6 @@
 import React from 'react'
 import Item from '../components/Item'
-
+import Config from 'Config'
 
 class ListItem extends React.Component {
     constructor() {
@@ -11,7 +11,7 @@ class ListItem extends React.Component {
     }
 
     componentDidMount() {
-        var url = "http://localhost:8081/Items"
+        var url = `${Config.serverURL}/Items`
         var xhr = new XMLHttpRequest()
         xhr.onreadystatechange = (error) => {
             if (xhr.readyState == 4) {

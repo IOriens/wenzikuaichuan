@@ -105,9 +105,9 @@ module.exports = {
     },
     externals: {
         'Config': JSON.stringify(isProduction() ? {
-            serverURL: "http://114.215.131.176:8090"
+            serverURL: "http://114.215.131.176:8091"
         } : {
-                serverURL: "http://localhost:8090"
+                serverURL: "http://localhost:8091"
             })
     }
 }

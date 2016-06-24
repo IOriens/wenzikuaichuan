@@ -2,9 +2,18 @@ import React from 'react'
 import { Link } from 'react-router'
 
 class Main extends React.Component {
+    componentWillMount () {
+        let lnk = document.createElement('link')
+        lnk.rel="short icon"
+        lnk.href= require("../img/favicon.ico")    
+        document.getElementsByTagName('head')[0].appendChild(lnk)
+        console.log('debug','favicon load cmp')
+    }
+
     render() {
         return (
             <div>
+            
                 <div className="left">
                     <h1><Link to="/"><img src={require('../img/icon.jpg')} alt="ICON" /></Link></h1>
                     <ul>                        

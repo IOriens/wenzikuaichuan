@@ -23,7 +23,6 @@ class ListItem extends React.Component {
                         messages: JSON.parse(xhr.responseText)
                     })
                     
-                    console.log(this.state.messages)
                 } else {
                    throw(error)
                 }

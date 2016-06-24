@@ -16,7 +16,7 @@ let $$ = (id) => {
 }
 
 const router = (
-  <Router history={browserHistory}>
+  <Router history={browserHistory}>    
     <Route path="/" component={Main}>
       <IndexRoute component={Upload}/>
       <Route path="/upload" component={Upload}/>
@@ -24,5 +24,5 @@ const router = (
     </Route>
   </Router>
 )
- 
+
 render(router, $$('main'))

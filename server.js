@@ -100,6 +100,26 @@ app.post('/Items', upload.array(), (req, res, next) => {
     
 })
 
+app.delete('/Items', upload.array(), (req, res, next) => {
+    
+    let item = req.body.item
+    let timeTag = new Date().getTime()    
+    let uploadItem = ({ "time": timeTag.toString(), "message": item })
+
+    console.log(uploadItem)
+
+    // MongoClient.connect(dbUrl, function (err, db) {
+    //     assert.equal(null, err);
+    //     console.log("Connected correctly to server.");
+    //     insertDocument(db, userId, uploadItem, () => {
+    //         res.send(uploadItem)
+    //         db.close();
+    //     })
+    // });
+    
+})
+
+
 app.get('/', (req, res) => {
     
     res.send('Hello!')

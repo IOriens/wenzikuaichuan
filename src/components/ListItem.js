@@ -36,7 +36,7 @@ class ListItem extends React.Component {
         return (
             <div>
                 <h2 className="nav-title">显示记录</h2>
-                <ul className="messages">{this.state.messages.map(function (item) {
+                <ul className="messages">{this.state.messages.reverse().map(function (item) {
                     return <Item key={item.time} item={item}/>
                 })}</ul>
             </div>

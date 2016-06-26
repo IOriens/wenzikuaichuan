@@ -7,7 +7,7 @@ class Main extends React.Component {
         lnk.rel="short icon"
         lnk.href= require("../img/favicon.ico")    
         document.getElementsByTagName('head')[0].appendChild(lnk)
-        console.log('debug','favicon load cmp')
+        // console.log('debug','favicon load cmp')
     }
 
     render() {

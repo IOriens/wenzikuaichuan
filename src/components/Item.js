@@ -1,9 +1,20 @@
 import React from 'react'
+import Config from 'Config'
+
 
 class Item extends React.Component {
 
-    handleDeletion (e) {
-        
+    handleClick (e) {
+        let form = new FormData()      
+        form.append('id', this.props.item.time)  
+        // console.log(this.props.item.time)
+
+        let request = {
+            method: 'delete',
+            body: form
+        }
+
+        this.props.handleDeletion(request,this.props.item.time)
     }
 
     render() {
@@ -16,7 +27,7 @@ class Item extends React.Component {
                     <h2>{message}</h2>
                     <h4>{time.toLocaleString() }</h4>
                 </div>
-                <button>Delete</button>
+                <button onClick={this.handleClick.bind(this)} >Delete</button>
             </li>
         )
     }

@@ -67,3 +67,7 @@ to
 ```
 loaders.push(
 ```
+
+## Communicate from child to parent
+We need callback to handle this.
+But I forgot to bind `this` in the parent to the annoymous function in a map iterator, this is so triky!! 

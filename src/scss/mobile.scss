@@ -14,11 +14,11 @@
                     margin: 0 auto;
                 }
             }
-            
+
             ul {
                 text-align: center;
                 li {
-                    display: inline-block                    
+                    display: inline-block
                 }
             }
         }
@@ -30,6 +30,20 @@
 
             .nav-title {
                 display: none;
+            }
+
+            .messages {
+                li:hover {
+
+                    .content {
+                        float: left;
+                        width: 80%;
+                    }
+
+                }
+
+
+
             }
 
             .upload {

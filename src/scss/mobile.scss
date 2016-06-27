@@ -33,6 +33,14 @@
             }
 
             .messages {
+
+                li {
+                    .content {
+                        float: left;
+                        width: 100%;
+                    }
+                }
+
                 li:hover {
 
                     .content {

@@ -50,7 +50,7 @@ class Upload extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="upload">
                 <h2 className="nav-title">上传信息</h2>
                 <form onSubmit={e => this.handleSubmit(e) }>
                     <textarea placeholder="Write something here" onChange={ e => this.handleChange(e) } value={this.state.text}/>

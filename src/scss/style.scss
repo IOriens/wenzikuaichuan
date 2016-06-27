@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 
-html, body {        
-    height: 100%;    
+html, body {
+    height: 100%;
 }
 
 h1, h2, h3, h4, p, ul, li {
@@ -17,13 +17,13 @@ body {
     margin: 0 auto;
 }
 
-a {                    
+a {
     text-decoration: none;
     cursor: pointer;
 }
 
 .wrapper {
-    min-height:  100%;    
+    min-height:  100%;
 }
 
 button {
@@ -38,171 +38,7 @@ button {
     cursor: pointer;
 }
 
-// header {
-//     h1 {
-//         font-size: 3em;
-//         margin: 0;
-//         overflow: hidden;
-//         padding: 10px 0;
-//         color: #007ee5;
-//         font-weight: 700;  
-//         img {
-//             width: 50px;
-//             height: 50px;
-//             display: block;
-//             float: left;
-//             padding-top: 15px;
-//             padding-right: 10px;
-//         }  
-//     }    
-// }
-
-main {
-    color: #007ee5;
-    overflow: hidden;
-    padding-bottom: 30px;       
-    .left {
-        float: left;
-        width: 25%;
-        padding-top: 10px;
-                
-        h1 {
-            // font-size: 3em;
-            // margin: 0;
-            // overflow: hidden;
-            // padding: 10px 0;
-            // color: #007ee5;
-            // font-weight: 700;  
-            height: 70px;
-                img {
-                    width: 50px;
-                    height: 50px;
-                    display: block;
-                    // float: left;
-                    // padding-top: 15px;
-                    // padding-right: 10px;
-                    // padding-bottom: 10px;
-                }  
-        }
-        
-        .active {
-            // background-color: #2895F1;
-            border-radius: 5px;
-            color: #000;
-            cursor: default;
-        }
-        
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0 5px;
-            font-size: 1.2em;
-            
-            li {
-                a {
-                    outline: none;
-                    color: #2895F1;
-                    display: block;                    
-                    padding: 5px;
-                    // width: 50%;
-                }                                
-            }
-        }        
-    }   
-    .right {
-        float: right;
-        width: 75%;
-        // padding-top: 20px;
-        
-        
-        // Common
-        // ===========================
-        .nav-title {
-            font-size: 18px;
-            font-weight: 400;
-            color: #000;
-            border-bottom: 1px solid #e5e5e5;
-            padding-bottom: 16px; 
-            margin-bottom: 30px;
-        }
-        
-        // ListItem
-        // ===========================
-        .messages {
-            list-style-type: none;    
-            margin: 0;
-            padding: 0;
-            li {                
-                overflow: hidden;
-                margin: 0 0 5px 0;
-                padding: 0;
-                .content {
-                    float: left;
-                    
-                    width: 90%;                    
-                    h2 {
-                        font-size: 1.5em;
-                        word-wrap: break-word;
-                    }
-                
-                    h4 {
-                        font-size: .8em;                        
-                    }
-                }
-                
-
-                button {
-                    outline: none;
-                    background: none;
-                    border: none;
-                    float: right;
-                    display: none;
-                }
-
-                
-            }
-
-            li:hover {
-                button {
-                    color: #fff;
-                    background-color: #d9534f;
-                    border: 1px solid #d43f3a;
-                    display: block;
-                }
-
-                button:hover {
-                    background-color: darken(#d9534f,8%)
-                }
-            }
-        }      
-         
-        // Upload  
-        // ===========================
-        textarea {       
-            border: 1px solid #007ee5;
-            border-radius: 3px;
-            display: block;
-            height: 400px;
-            margin-bottom: 10px;   
-            resize: none;
-            width: 100%;
-        }
-
-        textarea:focus {
-            outline: none;
-            border: 3px solid #007ee5;
-        }
-                
-        .submit-btn {    
-            border-color: #0071ce;
-            background-color: #007ee5;
-            background: -webkit-linear-gradient(#007ee5, #0071ce);
-            background: linear-gradient(#007ee5, #0071ce);
-            color: #fff;
-            // padding: 5px;    
-        }
-    }
-}
+@import 'main';
 
 footer {
     height: 30px;
@@ -218,11 +54,11 @@ footer {
 }
 
 .icon {
-	display: inline-block;
-	width: 1em;
-	height: 1em;
-	fill: currentColor;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
 }
 
-
+@import 'mobile';
 

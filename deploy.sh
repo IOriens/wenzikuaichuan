@@ -12,6 +12,6 @@ git add .
 
 git commit -m $var
 
-git push -u coding
+git push -u origin
 
 pm2 deploy ecosystem.json production

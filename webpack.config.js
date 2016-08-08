@@ -8,26 +8,9 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 const os = require('os');
 const ifaces = os.networkInterfaces();
+const ip = require('ip')
 
 
-var getLocalIP = function () {
-    for (let dev in ifaces) {
-        let alias = 0;
-        ifaces[dev].forEach(function (details) {
-            //   console.log(dev)  
-            if (details.family == 'IPv4' && dev.match(/enp7s0/)) {
-                return details.address
-                //   console.log(details.address)
-            }
-            // if (details.family=='IPv4') {  
-            //   console.log(dev+(alias?':'+alias:''),details.address);  
-            //   console.log(alias)
-            //   ++alias;  
-            // }  
-        });
-        return '172.24.13.12'
-    }
-}
 
 var isProduction = function () {
     return process.env.NODE_ENV === 'production';
@@ -52,7 +35,7 @@ var plugins = [
         template: path.join(__dirname, 'src/index.html')
     }),
 
-    new OpenBrowserPlugin({ url: `http://${getLocalIP()}:8080` })
+    new OpenBrowserPlugin({ url: `http://${ip.address()}:8080` })
 ]
 
 var loaders = [
@@ -127,7 +110,7 @@ module.exports = {
     },
     externals: {
         'Config': JSON.stringify(isProduction() ? {
-            serverURL: "http://114.215.131.176:8091"
+            serverURL: "http://wzkc.ioriens.com/api"
         } : {
                 serverURL: "http://localhost:8091"
             })

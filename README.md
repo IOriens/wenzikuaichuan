@@ -9,23 +9,17 @@ npm i
 
 # 运行程序
 npm start
-
-# 单独运行服务器
-node server.js
-
-# 单独运行服务端
-gulp default 
 ```
 
 
-服务器api端口为`8081`
-应用处于端口`3000`
+服务器api端口为`8091`
+应用处于端口`8080`
 
 # 开发环境
 ```
 # 编译
-gulp
+npm run dev
 
 # 编译生产文件（并压缩静态文件）
-gulp prod
+npm run build
 ```

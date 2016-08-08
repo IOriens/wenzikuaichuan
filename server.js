@@ -69,7 +69,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.all('/*', function (req, res, next) {
 
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "http://wzkc.ioriens.com/ , http://localhost/");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "OPTIONS,GET,POST,PUT,DELETE")
     next();
@@ -93,7 +93,7 @@ app.get('/api/Items', (req, res) => {
 
 })
 
-app.post('/Items', upload.array(), (req, res, next) => {
+app.post('/api/Items', upload.array(), (req, res, next) => {
 
     let item = req.body.item
     let timeTag = new Date().getTime()
@@ -111,7 +111,7 @@ app.post('/Items', upload.array(), (req, res, next) => {
 
 })
 
-app.delete('/Items', upload.array(), (req, res, next) => {
+app.delete('/api/Items', upload.array(), (req, res, next) => {
 
     let item = req.body.id        
 
@@ -130,7 +130,7 @@ app.delete('/Items', upload.array(), (req, res, next) => {
 })
 
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
 
     res.send('Hello!')
 

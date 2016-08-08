@@ -76,7 +76,7 @@ app.all('/*', function (req, res, next) {
 
 });
 
-app.get('/Items', (req, res) => {
+app.get('/api/Items', (req, res) => {
 
     MongoClient.connect(dbUrl, function (err, db) {
 

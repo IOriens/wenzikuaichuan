@@ -14,4 +14,6 @@ git commit -m $var
 
 git push -u origin
 
+git push -u github
+
 pm2 deploy ecosystem.json production

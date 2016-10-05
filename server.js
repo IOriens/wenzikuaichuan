@@ -20,8 +20,10 @@ var isProduction = function () {
     return process.env.NODE_ENV === 'production';
 };
 
-// let dbUrl = isProduction() ? 'mongodb://localhost:27017/wzkc': 'mongodb://114.215.131.176:27017/wzkc'
+
+// Mongodb Services
 const dbUrl = 'mongodb://localhost:27017/wzkc';
+
 // insertDocument in to mongodb
 var insertDocument = function (db, collection, data, callback) {
 
@@ -69,6 +71,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.all('/*', function (req, res, next) {
 
+    // Cors
     res.header("Access-Control-Allow-Origin", "http://wzkc.ioriens.com/ , http://localhost/");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "OPTIONS,GET,POST,PUT,DELETE")
@@ -76,6 +79,7 @@ app.all('/*', function (req, res, next) {
 
 });
 
+// 获取信息
 app.get('/api/Items', (req, res) => {
 
     MongoClient.connect(dbUrl, function (err, db) {
@@ -93,6 +97,7 @@ app.get('/api/Items', (req, res) => {
 
 })
 
+// 增加条目
 app.post('/api/Items', upload.array(), (req, res, next) => {
 
     let item = req.body.item
@@ -111,6 +116,7 @@ app.post('/api/Items', upload.array(), (req, res, next) => {
 
 })
 
+// 删除条目
 app.delete('/api/Items', upload.array(), (req, res, next) => {
 
     let item = req.body.id        
@@ -132,7 +138,7 @@ app.delete('/api/Items', upload.array(), (req, res, next) => {
 
 app.get('/api', (req, res) => {
 
-    res.send('Hello!')
+    res.send('Api Here!')
 
 })
 
